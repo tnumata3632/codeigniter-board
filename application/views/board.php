@@ -1,13 +1,3 @@
-<?php
-    $message = array();
-    $message["view_name"] = "テスト表示名";
-    $message["message"] = "テストメッセージ";
-    $message["post_date"] = "now";
-    $message_array = array();
-    $message_array[] = $message;
-    $message_array[] = $message;
-    $message_array[] = $message;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
