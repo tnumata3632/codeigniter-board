@@ -15,8 +15,18 @@ class Board extends CI_Controller
     {
         // POSTのときは投稿データをDBに登録
         if ($this->input->method() == 'post') {
-            $this->message_model->set_message();
-            $data['success_message'] = 'メッセージを書き込みました。';
+            
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('view_name', '表示名', 'required');
+            $this->form_validation->set_rules('message', 'ひと言メッセージ', 'required');
+            $this->form_validation->set_message('required', '{field}を入力してください。');
+            
+            if ($this->form_validation->run()) {
+                $this->message_model->set_message();
+                $data['success_message'] = 'メッセージを書き込みました。';
+            } else {
+                $data['error_message'] =  $this->form_validation->error_array();
+            }
         }
         
         $data['message_array'] = $this->message_model->get_all();

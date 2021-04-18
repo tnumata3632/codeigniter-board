@@ -12,6 +12,13 @@
 <?php if( !empty($success_message) ): ?>
     <p class="success_message"><?php echo $success_message; ?></p>
 <?php endif; ?>
+<?php if( !empty($error_message) ): ?>
+	<ul class="error_message">
+		<?php foreach( $error_message as $value ): ?>
+			<li>・<?php echo $value; ?></li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
 <form method="post">
 	<div>
 		<label for="view_name">表示名</label>
