@@ -13,6 +13,11 @@ class Board extends CI_Controller
     
     public function index()
     {
+        // POSTのときは投稿データをDBに登録
+        if ($this->input->method() == 'post') {
+            $this->message_model->set_message();
+        }
+        
         $data['message_array'] = $this->message_model->get_all();
         
         $this->load->view('board.php', $data);
