@@ -16,6 +16,7 @@ class Board extends CI_Controller
         // POSTのときは投稿データをDBに登録
         if ($this->input->method() == 'post') {
             $this->message_model->set_message();
+            $data['success_message'] = 'メッセージを書き込みました。';
         }
         
         $data['message_array'] = $this->message_model->get_all();

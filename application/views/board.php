@@ -9,6 +9,9 @@
 </head>
 <body>
 <h1>ひと言掲示板</h1>
+<?php if( !empty($success_message) ): ?>
+    <p class="success_message"><?php echo $success_message; ?></p>
+<?php endif; ?>
 <form method="post">
 	<div>
 		<label for="view_name">表示名</label>
