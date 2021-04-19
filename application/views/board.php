@@ -22,11 +22,11 @@
 <form method="post">
 	<div>
 		<label for="view_name">表示名</label>
-		<input id="view_name" type="text" name="view_name" value="">
+		<input id="view_name" type="text" name="view_name" value="<?php echo set_value('view_name'); ?>">
 	</div>
 	<div>
 		<label for="message">ひと言メッセージ</label>
-		<textarea id="message" name="message"></textarea>
+		<textarea id="message" name="message"><?php echo set_value('message'); ?></textarea>
 	</div>
 	<input type="submit" name="btn_submit" value="書き込む">
 </form>

@@ -7,6 +7,7 @@ class Board extends CI_Controller
         parent::__construct();
         $this->load->model('message_model');
         $this->load->helper('html');
+        $this->load->helper('form');
         
         date_default_timezone_set('Asia/Tokyo');
     }
