@@ -36,10 +36,10 @@
 <?php foreach( $message_array as $value ): ?>
 <article>
     <div class="info">
-        <h2><?php echo $value['view_name']; ?></h2>
+        <h2><?php echo html_escape($value['view_name']); ?></h2>
         <time><?php echo date('Y年m月d日 H:i', strtotime($value['post_date'])); ?></time>
     </div>
-    <p><?php echo $value['message']; ?></p>
+    <p><?php echo html_escape($value['message']); ?></p>
 </article>
 <?php endforeach; ?>
 <?php endif; ?>
