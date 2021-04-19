@@ -22,7 +22,7 @@
 <form method="post">
 	<div>
 		<label for="view_name">表示名</label>
-		<input id="view_name" type="text" name="view_name" value="<?php echo set_value('view_name'); ?>">
+		<input id="view_name" type="text" name="view_name" value="<?php echo set_value('view_name', $this->session->view_name); ?>">
 	</div>
 	<div>
 		<label for="message">ひと言メッセージ</label>

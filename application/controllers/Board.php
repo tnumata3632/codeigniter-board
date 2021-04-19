@@ -25,6 +25,9 @@ class Board extends CI_Controller
             if ($this->form_validation->run()) {
                 $this->message_model->set_message();
                 $data['success_message'] = 'メッセージを書き込みました。';
+                
+                // セッション保存
+                $this->session->view_name = $this->input->post('view_name');
             } else {
                 $data['error_message'] =  $this->form_validation->error_array();
             }
