@@ -24,10 +24,14 @@ class Board extends CI_Controller
             
             if ($this->form_validation->run()) {
                 $this->message_model->set_message();
-                $data['success_message'] = 'メッセージを書き込みました。';
+                $this->session->success_message = 'メッセージを書き込みました。';
+                $this->session->mark_as_flash('success_message');
                 
                 // セッション保存
                 $this->session->view_name = $this->input->post('view_name');
+                
+                // 自動リダイレクト
+                header('Location: ./');
             } else {
                 $data['error_message'] =  $this->form_validation->error_array();
             }

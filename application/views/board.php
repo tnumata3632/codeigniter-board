@@ -9,8 +9,8 @@
 </head>
 <body>
 <h1>ひと言掲示板</h1>
-<?php if( !empty($success_message) ): ?>
-    <p class="success_message"><?php echo $success_message; ?></p>
+<?php if( !empty($this->session->success_message) ): ?>
+    <p class="success_message"><?php echo $this->session->success_message; ?></p>
 <?php endif; ?>
 <?php if( !empty($error_message) ): ?>
 	<ul class="error_message">
