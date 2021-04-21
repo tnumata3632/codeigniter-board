@@ -42,4 +42,9 @@ class Board extends CI_Controller
         $this->load->view('board.php', $data);
     }
     
+    public function admin()
+    {
+        $data['message_array'] = $this->message_model->get_all();
+        $this->load->view('board_admin.php', $data);
+    }
 }
