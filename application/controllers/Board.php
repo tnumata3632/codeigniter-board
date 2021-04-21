@@ -36,12 +36,11 @@ class Board extends CI_Controller
                 // 自動リダイレクト
                 header('Location: ./');
             } else {
-                $data['error_message'] =  $this->form_validation->error_array();
+                $data['error_message'] = $this->form_validation->error_array();
             }
         }
         
         $data['message_array'] = $this->message_model->get_all();
-        
         $this->load->view('board.php', $data);
     }
     
