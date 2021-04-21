@@ -1,5 +1,8 @@
 <?php
 
+// 管理ページのログインパスワード
+define('PASSWORD', 'adminPassword');
+
 class Board extends CI_Controller
 {
     public function __construct()
@@ -44,6 +47,14 @@ class Board extends CI_Controller
     
     public function admin()
     {
+        if ($this->input->method() == 'post') {
+            if ($this->input->post('admin_password') == PASSWORD) {
+                $this->session->admin_login = 'true';
+            } else {
+                $data['error_message'][] = 'ログインに失敗しました。';
+            }
+        }
+        
         $data['message_array'] = $this->message_model->get_all();
         $this->load->view('board_admin.php', $data);
     }

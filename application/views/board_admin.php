@@ -18,6 +18,9 @@
 <?php endif; ?>
 <hr>
 <section>
+
+<?php if ($this->session->admin_login): ?>
+
 <?php if( !empty($message_array) ): ?>
 <?php foreach( $message_array as $value ): ?>
 <article>
@@ -29,6 +32,19 @@
 </article>
 <?php endforeach; ?>
 <?php endif; ?>
+
+<?php else: ?>
+
+<form method="post">
+    <div>
+        <label for="admin_password">ログインパスワード</label>
+        <input id="admin_password" type="password" name="admin_password" value="">
+    </div>
+    <input type="submit" name="btn_submit" value="ログイン">
+</form>
+
+<?php endif; ?>
+
 </section>
 </body>
 </html>

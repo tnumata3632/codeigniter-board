@@ -150,6 +150,7 @@ label {
 }
 
 input[type="text"],
+input[type="password"],
 textarea {
 	-webkit-appearance: none;
 	margin-bottom: 20px;
@@ -160,7 +161,8 @@ textarea {
     background: #fff;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
 	width: 200px;
 }
 textarea {
