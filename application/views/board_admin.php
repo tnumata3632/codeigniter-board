@@ -41,6 +41,9 @@
 </article>
 <?php endforeach; ?>
 <?php endif; ?>
+<form method="get" action="<?php echo site_url('logout'); ?>">
+    <input type="submit" name="btn_logout" value="ログアウト">
+</form>
 
 <?php else: ?>
 

@@ -70,4 +70,10 @@ class Board extends CI_Controller
         $data = $this->message_model->get_csv($limit);
         force_download('メッセージデータ.csv', mb_convert_encoding($data, "SJIS"));
     }
+    
+    public function logout()
+    {
+        $this->session->admin_login = null;
+        header('Location: ./admin');
+    }
 }
