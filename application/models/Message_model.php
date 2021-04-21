@@ -14,9 +14,9 @@ class Message_model extends CI_Model
         return $query->result_array();
     }
     
-    public function get_csv()
+    public function get_csv($limit = null)
     {
-        $query = $this->db->order_by('id', 'desc')->get('message');
+        $query = $this->db->order_by('id', 'desc')->limit($limit)->get('message');
         return $this->dbutil->csv_from_result($query);
     }
     

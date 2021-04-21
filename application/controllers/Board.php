@@ -63,7 +63,11 @@ class Board extends CI_Controller
     {
         $this->load->helper('download');
         
-        $data = $this->message_model->get_csv();
+        $limit = null;
+        if ($this->input->get('limit') == '10') $limit = 10;
+        if ($this->input->get('limit') == '30') $limit = 30;
+        
+        $data = $this->message_model->get_csv($limit);
         force_download('メッセージデータ.csv', mb_convert_encoding($data, "SJIS"));
     }
 }

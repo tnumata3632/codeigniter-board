@@ -22,6 +22,11 @@
 <?php if ($this->session->admin_login): ?>
 
 <form method="get" action="<?php echo site_url('download'); ?>">
+    <select name="limit">
+        <option value="">全て</option>
+        <option value="10">10件</option>
+        <option value="30">30件</option>
+    </select>
     <input type="submit" name="btn_download" value="ダウンロード">
 </form>
 
