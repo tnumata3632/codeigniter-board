@@ -11,6 +11,7 @@ class Board extends CI_Controller
         $this->load->model('message_model');
         $this->load->helper('html');
         $this->load->helper('form');
+        $this->load->helper('url');
         
         date_default_timezone_set('Asia/Tokyo');
     }
@@ -56,5 +57,13 @@ class Board extends CI_Controller
         
         $data['message_array'] = $this->message_model->get_all();
         $this->load->view('board_admin.php', $data);
+    }
+    
+    public function download()
+    {
+        $this->load->helper('download');
+        
+        $data = $this->message_model->get_csv();
+        force_download('メッセージデータ.csv', mb_convert_encoding($data, "SJIS"));
     }
 }

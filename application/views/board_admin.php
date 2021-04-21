@@ -21,6 +21,10 @@
 
 <?php if ($this->session->admin_login): ?>
 
+<form method="get" action="<?php echo site_url('download'); ?>">
+    <input type="submit" name="btn_download" value="ダウンロード">
+</form>
+
 <?php if( !empty($message_array) ): ?>
 <?php foreach( $message_array as $value ): ?>
 <article>
